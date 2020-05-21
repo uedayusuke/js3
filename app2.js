@@ -19,10 +19,20 @@ alert(promptStr);
 alert("ジャンケンゲームの始まりだ！");
 
 var user_hand = prompt("ジャンケンの手をグー、チョキ、パーから選ぶんだ！");
+
+while ((user_hand != "グー")&&(user_hand != "チョキ")&&(user_hand != "パー")&&(user_hand != null)){
+	alert("何やってんだ！グー・チョキ・パーを知らないのか！！？");
+	user_hand = prompt("さあもう一回！グー、チョキ、パーから選ぶんだ！!");
+}
+
 var js_hand = getJShand();
 var judge = winLose(user_hand, js_hand)
 
-alert("君の選んだ手は" + user_hand + "だな！\n僕の選んだ手は" + js_hand + "だ！\n勝敗は" + judge + "だ！！");
+if (user_hand != null) {
+	alert("君の選んだ手は" + user_hand + "だな！\n僕の選んだ手は" + js_hand + "だ！\n勝敗は" + judge + "だ！！");
+}else {
+	alert("まずはじゃんけんを勉強してきな！！");
+}
 
 //関数"getJShand"、引数なし、戻り値"hand_name"
 //"Math.floor()"は()内以下の最大整数を表示
