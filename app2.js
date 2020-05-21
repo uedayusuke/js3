@@ -11,7 +11,9 @@ function addString(strA){
 }
 
 alert("入力ダイアログ");
+//promptを用いて入力欄を表示
 var promptStr = prompt("何か好きな文字を入力してください。");
+//alertを用いて先ほどpromptで入力した内容を反映
 alert(promptStr);
 
 alert("ジャンケンゲームの始まりだ！");
@@ -22,6 +24,10 @@ var judge = winLose(user_hand, js_hand)
 
 alert("君の選んだ手は" + user_hand + "だな！\n僕の選んだ手は" + js_hand + "だ！\n勝敗は" + judge + "だ！！");
 
+//関数"getJShand"、引数なし、戻り値"hand_name"
+//"Math.floor()"は()内以下の最大整数を表示
+//"Math.random()"は0以上1未満をランダムに表示
+//→"Math.random()"で出された0~2.9999...を"Math.floor()"で2.9999...以下最大の整数に変換
 function getJShand(){
 	var js_hand_num = Math.floor( Math.random() * 3);
 	var hand_name;
@@ -35,6 +41,7 @@ function getJShand(){
 	return hand_name;
 };
 
+//関数"winLose"、引数"user_hand, js_hand"、戻り値"winLoseStr"
 function winLose(user_hand, js_hand){
 	var winLoseStr;
 
